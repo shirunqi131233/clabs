@@ -1,31 +1,25 @@
 #include<stdlib.h>
 #include<stdio.h>
-int count1InNum(int num)
-{
-int result=0;
-while(num!=0)
-{
-num &=(num-1);
-result++;
+int main(void){
+    int a;
+    int b=0;
+    int c[100];
+    int count=0;
+    printf("输入一个四位数的正整数:\n");
+    scanf("%d",&a);
+    printf("二进制:");
+    while (a){
+        c[b]=a%2;
+        b++;
+        a/=2;
+    }
+for(int j=b-1;j>=0;j--){
+    printf("%d",c[j]);
+    if(c[j]==1){
+        count++;
+    }
 }
-return result;
-}
-int count(int num)
-{
-int result=0;
-while(num!=0)
-{ if(num%2!=0) result++; num /= 2; }
-return result;
-}
-int main()
-{
-int num;
-scanf("%d",&num);
-while(num!=0)
-{ char s[33]; itoa(num, s, 2);
-printf("The number of 1 in %d (%s) is %d.\n",num,s,count1InNum(num));
-printf("The number of 1 in %d (%s) is %d.\n",num,s,count(num));
-scanf("%d",&num); }
-getchar();
+printf("\n\"1\"出现的次数是%d\n",count);
+system("pause");
 return 0;
-} 
+}
