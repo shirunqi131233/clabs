@@ -1,15 +1,18 @@
 #include<stdio.h>
-#define LOWER 0
-#define UPPER 100
-#define STEP 5
-#include<stdlib.h>
-int main()
+  int main()
 {
-    double c,f;
-    for(c=0;c<=100;c+=10){
-        f=c/5.0*9.0+32;
-        printf("%8.2f\n",c,f);
+    {
+    printf("celsius fahr\n");
+    } 
+    int celsius, fahr;
+    int lower, upp, step;
+    upp = 100;
+    lower = 0;
+    step = 5;
+    celsius = lower;
+    while (celsius <= upp) {
+        fahr = 32+(9*celsius/5);
+        printf("%d\t%d\n", celsius, fahr);
+        celsius = celsius + step;
     }
-    system("pause");
-    return 0;
-} 
+}
